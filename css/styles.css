@@ -1,0 +1,153 @@
+/* =====================================================
+   Arte Urbano — CSS limpio y consistente
+   Objetivos:
+   - Misma anchura para header (banner+navbar), main y footer
+   - Estética original preservada (fondo oscuro + neones, cards)
+   - Botón de tema junto al menú
+   - Lightbox sin recortes, con fade suave
+   ===================================================== */
+
+/* ---------- Variables ---------- */
+:root{
+  --maxw: 1100px;
+  --radius: 14px;
+
+  --bg: #0b0b10;
+  --paper:#f5f7fb;
+  --muted:#a6adbb;
+  --card:#12131a;
+  --link:#7dd3fc;
+  --accent:#22d3ee;
+
+  --ink:#0ef; --ink2:#ff3; --ink3:#f0f;
+
+  --nav-text: var(--paper);
+  --nav-bg: rgba(255,255,255,.06);
+  --nav-border: rgba(255,255,255,.12);
+}
+:root[data-theme="light"]{
+  --bg:#f7f8fb; --paper:#101218; --muted:#3e4553; --card:#ffffff; --link:#0ea5e9;
+  --nav-text:#0f172a; --nav-bg: rgba(0,0,0,.08); --nav-border: rgba(0,0,0,.12);
+}
+
+/* ---------- Base ---------- */
+*{ box-sizing:border-box }
+html{ scroll-behavior:smooth }
+body{
+  margin:0; color:var(--paper);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.12), transparent 60%),
+    radial-gradient(1200px 600px at 110% -20%, rgba(244,114,182,.08), transparent 60%),
+    radial-gradient(1200px 600px at 50% -30%, rgba(250,204,21,.08), transparent 60%),
+    var(--bg);
+  line-height:1.6;
+}
+a{ color: var(--link) }
+.container{ max-width: var(--maxw); margin: 0 auto; padding-inline: 20px; }
+.sr-only{ position:absolute!important; clip: rect(1px,1px,1px,1px); height:1px; width:1px; overflow:hidden; white-space:nowrap; }
+
+/* ---------- Header (banner + navbar) ---------- */
+/* Contenido contenido a --maxw */
+.banner{ padding: 8px 0; }
+.banner .container{ display:flex; align-items:center; justify-content:center; }
+.banner img{ display:block; width:100%; height:auto; position:relative; z-index:1; transition: opacity .35s ease; } /* crossfade */
+.banner img.is-fading{ opacity: 0; }
+
+.navbar-wrap .container{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:.6rem;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.04);
+  backdrop-filter: saturate(150%) blur(8px);
+}
+.logo{ display:flex; align-items:center; gap:.5rem; color: var(--nav-text); font-weight:700; letter-spacing:.5px; text-decoration:none; }
+.menu{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.menu a{ color: var(--nav-text); text-decoration:none; padding:.5rem .8rem; border-radius:999px; border:1px solid var(--nav-border); background: var(--nav-bg); transition: transform .12s ease, background .2s ease, box-shadow .2s ease; }
+.menu a:hover{ transform: translateY(-1px); background: rgba(255,255,255,.12); box-shadow: 0 6px 18px rgba(34,211,238,.08); }
+.menu a.active{ background: var(--link); color: var(--bg); border-color: transparent; box-shadow: 0 0 0 2px rgba(255,255,255,.15) inset; }
+.nav-tools-inline{ display:flex; align-items:center; gap:10px; }
+.theme-toggle{ color: var(--nav-text); border:1px solid var(--nav-border); background: var(--nav-bg); border-radius: 999px; cursor:pointer; height:36px; padding: 0 .6rem; }
+
+/* ---------- Main ---------- */
+main{ padding-block:2rem; }
+.card{ background: var(--card); color: var(--paper); border:1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding:1rem; box-shadow: 0 10px 30px rgba(0,0,0,.25) }
+.lead{ font-size:1.1rem; color: var(--muted) }
+.main-flex{ display:flex; gap:1rem; align-items:stretch; }
+.main-flex > .grow{ flex:1 1 auto }
+.main-flex > aside{ flex: 0 0 320px; position: sticky; top: 1rem; }
+
+/* Galería */
+.gallery{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1rem; }
+figure{ margin:0; display:flex; flex-direction:column; gap:.65rem; }
+figure img{ width:100%; height:260px; object-fit:cover; border-radius: calc(var(--radius) - 4px); border:1px solid rgba(255,255,255,.06) }
+figcaption{ font-size:.9rem; color: var(--muted) }
+
+/* Noticias */
+.news-list{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1rem; }
+.news-item{ display:flex; gap:1rem; align-items:flex-start; background: var(--card); border:1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding:.75rem }
+.news-item img{ width:96px; height:96px; object-fit:cover; border-radius:10px; border:1px solid rgba(255,255,255,.06) }
+
+/* Detalle obra */
+.media{ display:grid; grid-template-columns:1fr; gap:1rem; }
+@media (min-width:900px){ .media{ grid-template-columns:1.4fr 1fr } }
+.media img{ width:100%; height:auto; border-radius: var(--radius); border:1px solid rgba(255,255,255,.06) }
+
+/* Formularios */
+form{ display:grid; gap:.8rem }
+label{ font-weight:600 }
+input, textarea, select, button{ width:100%; padding:.8rem .9rem; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0d0f17; color: var(--paper) }
+input::placeholder, textarea::placeholder{ color:#7f8596 }
+textarea{ min-height:140px; resize:vertical }
+button{ cursor:pointer; font-weight:700; background: linear-gradient(135deg, var(--ink) 0%, var(--ink2) 60%, var(--ink3) 100%); color:#001018; border:none; box-shadow: 0 10px 24px rgba(0,0,0,.35) }
+button:hover{ filter: brightness(1.05) }
+:root[data-theme="light"] input, :root[data-theme="light"] textarea, :root[data-theme="light"] select{ background:#e0e0e0; color:#101218; border-color:#b0b0b0 }
+:root[data-theme="light"] input::placeholder, :root[data-theme="light"] textarea::placeholder{ color:#505050 }
+
+/* ---------- Lightbox (sin recortes) ---------- */
+.lightbox{ position: fixed; inset: 0; z-index:1000; display:flex; align-items:center; justify-content:center; background: rgba(0,0,0,.85); opacity:0; visibility:hidden; pointer-events:none; transition: opacity .28s ease, visibility .28s ease; padding: clamp(8px,3vw,24px) }
+.lightbox:target{ opacity:1; visibility:visible; pointer-events:auto }
+.lightbox figure{ display:flex; align-items:center; justify-content:center; margin:0; background:#000; max-width:min(1200px,98vw); max-height:92vh; border-radius:12px; box-shadow: 0 20px 60px rgba(0,0,0,.55); padding:10px }
+.lightbox img{ max-width:96vw; max-height:calc(92vh - 20px); width:auto; height:auto; object-fit:contain; display:block; border-radius:8px }
+.lightbox .close{ position:absolute; top: clamp(8px,3vw,24px); right: clamp(8px,3vw,24px); width: 40px; height: 40px; border-radius:999px; background:#000; color:#fff; display:grid; place-items:center; text-decoration:none; font-size:24px; opacity:.85 }
+.lightbox .close:hover{ opacity:1 }
+@media (prefers-reduced-motion: reduce){ .lightbox, .lightbox img{ transition:none } }
+body:has(.lightbox:target){ overflow:hidden }
+
+/* ---------- Footer ---------- */
+footer{ padding:2rem 0; color: var(--muted); font-size:.95rem; }
+footer .container{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); border-top:1px solid rgba(255,255,255,.06); padding-top: 1.25rem }
+.footer-brand{ display:flex; align-items:center; gap:.75rem }
+.footer-brand img{ width:40px; height:40px }
+
+/* ---------- Back to top ---------- */
+.back-to-top{ position: fixed; right: 1rem; bottom: 1rem; z-index:50; display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:999px; background: linear-gradient(135deg, var(--ink), var(--ink3)); color:#001018; text-decoration:none; font-weight:700; border:1px solid rgba(255,255,255,.2); box-shadow: 0 10px 30px rgba(0,0,0,.35) }
+/* ==== Fondo degradado con ::before/::after en el banner (detrás del SVG) ==== */
+.banner{ position: relative; }
+.banner::before,
+.banner::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 0;
+  background:
+    radial-gradient(600px 220px at 15% 85%, rgba(34,211,238,.20), transparent 60%),
+    radial-gradient(800px 260px at 85% 20%, rgba(250,204,21,.18), transparent 60%),
+    radial-gradient(900px 320px at 40% 10%, rgba(244,114,182,.18), transparent 60%);
+}
+/* Asegura que el contenido del banner quede por encima del overlay */
+.banner .container{ position: relative; z-index: 1; }
+.banner img{ position: relative; z-index: 1; }
+
+
+/* ==== Banner gradient para tema claro ==== */
+:root[data-theme="light"] .banner::before,
+:root[data-theme="light"] .banner::after{
+  background:
+    radial-gradient(600px 220px at 15% 85%, rgba(14,165,233,.20), transparent 60%), /* azul claro */
+    radial-gradient(800px 260px at 85% 20%, rgba(245,158,11,.18),  transparent 60%), /* ámbar */
+    radial-gradient(900px 320px at 40% 10%, rgba(236,72,153,.18),  transparent 60%);  /* rosa */
+  mix-blend-mode: multiply; /* mejor integración en fondos claros */
+}

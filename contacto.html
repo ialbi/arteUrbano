@@ -1,0 +1,96 @@
+<!doctype html>
+<!-- URL de publicación (sustituir al publicar): https://TU-USUARIO.github.io/arte-urbano-site/ -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · Arte Urbano</title>
+  <meta name="description" content="Arte Urbano: muralismo y graffiti en Ondarroa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<a class="sr-only" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="banner">
+    <div class="container"><img src="img/banner-dark.svg" alt="Arte Urbano — banner con estilo graffiti"></div>
+  </div>
+  <div class="navbar-wrap">
+    <nav aria-label="Principal">
+      <div class="container navbar">
+        <a class="logo" href="index.html">
+          <span aria-hidden="true">🎨</span><strong>Arte Urbano</strong>
+          <span>muralismo & graffiti</span>
+        </a>
+        <div class="menu">
+          <a href="index.html" >Inicio</a>
+          <a href="galeria.html" >Galería</a>
+          <a href="noticias.html" >Noticias</a>
+          <a href="contacto.html" class="active">Contacto</a>
+        </div>
+      <div class="nav-tools-inline"><button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Cambiar tema">🌓 Cambiar tema</button></div></div>
+    </nav>
+    </div>
+</header>
+<main id="contenido" class="container">
+
+
+
+
+<section class="card">
+  <h1>Contacto</h1>
+  <p class="lead">Envíanos tus comentarios por correo (se abrirá tu cliente de correo).</p>
+
+  <!-- Acción con mailto: abre el cliente de correo del usuario -->
+  <form action="mailto:ialbizu@birt.eus" method="get">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" name="Email" type="email" placeholder="tucorreo@ejemplo.com" required>
+    </div>
+    <div>
+      <label for="tema">Tema</label>
+      <select id="tema" name="Asunto">
+        <option value="Consulta">Consulta</option>
+        <option value="Colaboración">Colaboración</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+    <div>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="Cuerpo" placeholder="Escribe tu mensaje..."></textarea>
+    </div>
+    <div>
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+</section>
+
+
+
+
+</main>
+<footer>
+  <div class="container cols">
+    <div class="footer-brand">
+      <img src="img/footer.svg" alt="" aria-hidden="true">
+      <div>
+        <strong>Arte Urbano</strong><br>
+        <span>© 2025 · Todos los derechos reservados</span>
+      </div>
+    </div>
+    <div>
+      <p>Créditos fotográficos y licencia (CC BY-SA 4.0) indicados en los pie de foto.</p>
+    </div>
+  </div>
+  <a class="back-to-top" href="#top" title="Volver arriba">↑</a>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- URL de publicación (sustituir al publicar): https://TU-USUARIO.github.io/arte-urbano-site/ -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · Arte Urbano</title>
+  <meta name="description" content="Arte Urbano: muralismo y graffiti en Ondarroa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<a class="sr-only" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="banner">
+    <div class="container"><img src="img/banner-dark.svg" alt="Arte Urbano — banner con estilo graffiti"></div>
+  </div>
+  <div class="navbar-wrap">
+    <nav aria-label="Principal">
+      <div class="container navbar">
+        <a class="logo" href="index.html">
+          <span aria-hidden="true">🎨</span><strong>Arte Urbano</strong>
+          <span>muralismo & graffiti</span>
+        </a>
+        <div class="menu">
+          <a href="index.html" class="active">Inicio</a>
+          <a href="galeria.html" >Galería</a>
+          <a href="noticias.html" >Noticias</a>
+          <a href="contacto.html" >Contacto</a>
+        </div>
+      <div class="nav-tools-inline"><button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Cambiar tema">🌓 Cambiar tema</button></div></div>
+    </nav>
+    </div>
+</header>
+<main id="contenido" class="container">
+
+
+
+
+<!-- Contenedor principal con FLEXBOX; el aside usa position: sticky -->
+<section class="main-flex">
+  <article class="card grow">
+    <h1>Arte Urbano en Ondarroa</h1>
+    <p class="lead">
+      Muralismo, graffiti y comunidad. Un recorrido por piezas destacadas de la villa costera
+      y enlaces a noticias relacionadas.
+    </p>
+    <p>Explora la <a href="galeria.html">galería</a>, lee las <a href="noticias.html">noticias</a> o ponte en
+      <a href="contacto.html">contacto</a>.</p>
+  </article>
+  <!-- div necesario: el aside se representa como bloque independiente con sticky; se agrupa en card -->
+  <aside class="card">
+    <h2>Créditos & licencias</h2>
+    <p>Las imágenes proceden de Wikimedia Commons (CC BY-SA 4.0). El pie de foto indica autoría de la fotografía y licencia.</p>
+    <ul>
+      <li>Diseño principal con Flexbox + (absolute, sticky, fixed, float).</li>
+      <li>Medidas relativas y tipografía del sistema.</li>
+      <li>Estética inspirada en spray urbano.</li>
+    </ul>
+  </aside>
+</section>
+
+
+
+
+</main>
+<footer>
+  <div class="container cols">
+    <div class="footer-brand">
+      <img src="img/footer.svg" alt="" aria-hidden="true">
+      <div>
+        <strong>Arte Urbano</strong><br>
+        <span>© 2025 · Todos los derechos reservados</span>
+      </div>
+    </div>
+    <div>
+      <p>Créditos fotográficos y licencia (CC BY-SA 4.0) indicados en los pie de foto.</p>
+    </div>
+  </div>
+  <a class="back-to-top" href="#top" title="Volver arriba">↑</a>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
