@@ -1,5 +1,11 @@
+<!-- 
+LMSGI02 Tarea Evaluativa 02
+autor: Ibai Albizu
+Enlace a pagina web: https://ialbi.github.io/arteUrbano/
+Documento de reflexión: en carpeta raiz del zip.
+-->
+
 <!doctype html>
-<!-- URL de publicación (sustituir al publicar): https://TU-USUARIO.github.io/arte-urbano-site/ -->
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -15,22 +21,34 @@
 <body id="top">
 <a class="sr-only" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
+  <!-- div necesario: agrupa el banner visual; no existe una etiqueta semántica específica para este propósito -->
+
   <div class="banner">
+    <!-- div necesario: contenedor para centrar el contenido del banner mediante CSS -->
+
     <div class="container"><img src="img/banner-dark.svg" alt="Arte Urbano — banner con estilo graffiti"></div>
   </div>
+  <!-- div necesario: agrupa la barra de navegación principal -->
+
   <div class="navbar-wrap">
     <nav aria-label="Principal">
+      <!-- div necesario: contenedor para aplicar flexbox al logo, menú y herramientas -->
+
       <div class="container navbar">
         <a class="logo" href="index.html">
           <span aria-hidden="true">🎨</span><strong>Arte Urbano</strong>
           <span>muralismo & graffiti</span>
         </a>
+        <!-- div necesario: agrupa los enlaces de navegación -->
+
         <div class="menu">
           <a href="index.html" >Inicio</a>
           <a href="galeria.html" class="active">Galería</a>
           <a href="noticias.html" >Noticias</a>
           <a href="contacto.html" >Contacto</a>
         </div>
+      <!-- div necesario: agrupa herramientas adicionales (botón para cambiar tema) -->
+
       <div class="nav-tools-inline"><button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Cambiar tema">🌓 Cambiar tema</button></div></div>
     </nav>
     </div>
@@ -47,7 +65,11 @@
     <p><strong>Autoría del mural:</strong> Djoels</p>
   </header>
 
+  <!-- div necesario: agrupa imagen y texto de la obra en un diseño de dos columnas -->
+
+
   <div class="media">
+    <!-- div necesario: contenedor de la imagen -->
     <div>
       <!-- Esta figura usa 'float' en pantallas anchas si se asigna la clase -->
       <figure class="">
@@ -55,6 +77,7 @@
         <figcaption>Fotografía: Wikimaribarre — Licencia: CC BY-SA 4.0.</figcaption>
       </figure>
     </div>
+    <!-- div necesario: contenedor del texto descriptivo -->
     <div>
       <h2>Descripción</h2>
       <p>Composición a gran escala con cromática vibrante y motivos marinos, integrando el contexto de Ondarroa.
@@ -77,9 +100,15 @@
 
 </main>
 <footer>
+  <!-- div necesario: estructura de columnas del footer -->
+
   <div class="container cols">
+    <!-- div necesario: agrupa el logo y el nombre de la marca -->
+
     <div class="footer-brand">
       <img src="img/footer.svg" alt="" aria-hidden="true">
+      <!-- div necesario: contenedor del bloque de texto de marca (alineación con el logo) -->
+
       <div>
         <strong>Arte Urbano</strong><br>
         <span>© 2025 · Todos los derechos reservados</span>

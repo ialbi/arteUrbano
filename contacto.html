@@ -1,5 +1,11 @@
+<!-- 
+LMSGI02 Tarea Evaluativa 02
+autor: Ibai Albizu
+Enlace a pagina web: https://ialbi.github.io/arteUrbano/
+Documento de reflexión: en carpeta raiz del zip.
+-->
+
 <!doctype html>
-<!-- URL de publicación (sustituir al publicar): https://TU-USUARIO.github.io/arte-urbano-site/ -->
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -15,22 +21,34 @@
 <body id="top">
 <a class="sr-only" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
+  <!-- div necesario: agrupa el banner visual; no existe una etiqueta semántica específica para este propósito -->
+
   <div class="banner">
+    <!-- div necesario: contenedor para centrar el contenido del banner mediante CSS -->
+
     <div class="container"><img src="img/banner-dark.svg" alt="Arte Urbano — banner con estilo graffiti"></div>
   </div>
+  <!-- div necesario: agrupa la barra de navegación principal -->
+
   <div class="navbar-wrap">
     <nav aria-label="Principal">
+      <!-- div necesario: contenedor para aplicar flexbox al logo, menú y herramientas -->
+
       <div class="container navbar">
         <a class="logo" href="index.html">
           <span aria-hidden="true">🎨</span><strong>Arte Urbano</strong>
           <span>muralismo & graffiti</span>
         </a>
+        <!-- div necesario: agrupa los enlaces de navegación -->
+
         <div class="menu">
           <a href="index.html" >Inicio</a>
           <a href="galeria.html" >Galería</a>
           <a href="noticias.html" >Noticias</a>
           <a href="contacto.html" class="active">Contacto</a>
         </div>
+      <!-- div necesario: agrupa herramientas adicionales (botón para cambiar tema) -->
+
       <div class="nav-tools-inline"><button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Cambiar tema">🌓 Cambiar tema</button></div></div>
     </nav>
     </div>
@@ -46,14 +64,17 @@
 
   <!-- Acción con mailto: abre el cliente de correo del usuario -->
   <form action="mailto:ialbizu@birt.eus" method="get">
+    <!-- div necesario: agrupa cada campo del formulario para aplicar estilos individuales -->
     <div>
       <label for="nombre">Nombre</label>
       <input id="nombre" name="Nombre" type="text" placeholder="Tu nombre" required>
     </div>
+    <!-- div necesario: agrupa cada campo del formulario para aplicar estilos individuales -->
     <div>
       <label for="email">Email</label>
       <input id="email" name="Email" type="email" placeholder="tucorreo@ejemplo.com" required>
     </div>
+    <!-- div necesario: agrupa cada campo del formulario para aplicar estilos individuales -->
     <div>
       <label for="tema">Tema</label>
       <select id="tema" name="Asunto">
@@ -62,10 +83,12 @@
         <option value="Otro">Otro</option>
       </select>
     </div>
+    <!-- div necesario: agrupa cada campo del formulario para aplicar estilos individuales -->
     <div>
       <label for="mensaje">Mensaje</label>
       <textarea id="mensaje" name="Cuerpo" placeholder="Escribe tu mensaje..."></textarea>
     </div>
+    <!-- div necesario: agrupa el botón para alinearlo con los campos -->
     <div>
       <button type="submit">Enviar</button>
     </div>
@@ -77,9 +100,15 @@
 
 </main>
 <footer>
+  <!-- div necesario: estructura de columnas del footer -->
+
   <div class="container cols">
+    <!-- div necesario: agrupa el logo y el nombre de la marca -->
+
     <div class="footer-brand">
       <img src="img/footer.svg" alt="" aria-hidden="true">
+      <!-- div necesario: contenedor del bloque de texto de marca (alineación con el logo) -->
+
       <div>
         <strong>Arte Urbano</strong><br>
         <span>© 2025 · Todos los derechos reservados</span>

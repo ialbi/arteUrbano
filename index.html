@@ -1,5 +1,11 @@
+<!-- 
+LMSGI02 Tarea Evaluativa 02
+autor: Ibai Albizu
+Enlace a pagina web: https://ialbi.github.io/arteUrbano/
+Documento de reflexión: en carpeta raiz del zip.
+-->
+
 <!doctype html>
-<!-- URL de publicación (sustituir al publicar): https://TU-USUARIO.github.io/arte-urbano-site/ -->
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -8,67 +14,75 @@
   <meta name="description" content="Arte Urbano: muralismo y graffiti en Ondarroa.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body id="top">
+<!-- enlace de salto para accesibilidad: permite ir directo al contenido -->
 <a class="sr-only" href="#contenido">Saltar al contenido</a>
+
 <header class="site-header">
+  <!-- div necesario: agrupa el banner visual; no existe una etiqueta semántica específica para este propósito -->
   <div class="banner">
-    <div class="container"><img src="img/banner-dark.svg" alt="Arte Urbano — banner con estilo graffiti"></div>
+    <!-- div necesario: se usa como contenedor general para centrar el contenido mediante CSS -->
+    <div class="container">
+      <img src="img/banner-dark.svg" alt="Arte Urbano — banner con estilo graffiti">
+    </div>
   </div>
+
+  <!-- div necesario: agrupa la barra de navegación y permite aplicar estilos de fondo y posición -->
   <div class="navbar-wrap">
     <nav aria-label="Principal">
+      <!-- div necesario: estructura la barra interna con flexbox (logo, menú, botón); actúa como contenedor -->
       <div class="container navbar">
         <a class="logo" href="index.html">
           <span aria-hidden="true">🎨</span><strong>Arte Urbano</strong>
           <span>muralismo & graffiti</span>
         </a>
+        <!-- div necesario: agrupa los enlaces del menú principal -->
         <div class="menu">
           <a href="index.html" class="active">Inicio</a>
-          <a href="galeria.html" >Galería</a>
-          <a href="noticias.html" >Noticias</a>
-          <a href="contacto.html" >Contacto</a>
+          <a href="galeria.html">Galería</a>
+          <a href="noticias.html">Noticias</a>
+          <a href="contacto.html">Contacto</a>
         </div>
-      <div class="nav-tools-inline"><button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Cambiar tema">🌓 Cambiar tema</button></div></div>
+        <!-- div necesario: agrupa las herramientas adicionales de navegación (botón de tema) -->
+        <div class="nav-tools-inline">
+          <button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Cambiar tema">🌓 Cambiar tema</button>
+        </div>
+      </div>
     </nav>
-    </div>
+  </div>
 </header>
+
 <main id="contenido" class="container">
+  <!-- Contenedor principal con FLEXBOX; el aside usa position: sticky -->
+  <section class="main-flex">
+    <article class="card grow">
+      <h1>Arte Urbano en Ondarroa</h1>
+      <p class="lead">
+        Muralismo, graffiti y comunidad. Un recorrido por piezas destacadas de la villa costera
+        y enlaces a noticias relacionadas.
+      </p>
+      <p>Explora la <a href="galeria.html">galería</a>, lee las <a href="noticias.html">noticias</a> o ponte en
+        <a href="contacto.html">contacto</a>.</p>
+    </article>
 
-
-
-
-<!-- Contenedor principal con FLEXBOX; el aside usa position: sticky -->
-<section class="main-flex">
-  <article class="card grow">
-    <h1>Arte Urbano en Ondarroa</h1>
-    <p class="lead">
-      Muralismo, graffiti y comunidad. Un recorrido por piezas destacadas de la villa costera
-      y enlaces a noticias relacionadas.
-    </p>
-    <p>Explora la <a href="galeria.html">galería</a>, lee las <a href="noticias.html">noticias</a> o ponte en
-      <a href="contacto.html">contacto</a>.</p>
-  </article>
-  <!-- div necesario: el aside se representa como bloque independiente con sticky; se agrupa en card -->
-  <aside class="card">
-    <h2>Créditos & licencias</h2>
-    <p>Las imágenes proceden de Wikimedia Commons (CC BY-SA 4.0). El pie de foto indica autoría de la fotografía y licencia.</p>
-    <ul>
-      <li>Diseño principal con Flexbox + (absolute, sticky, fixed, float).</li>
-      <li>Medidas relativas y tipografía del sistema.</li>
-      <li>Estética inspirada en spray urbano.</li>
-    </ul>
-  </aside>
-</section>
-
-
-
-
+    <aside class="card">
+      <h2>Créditos & licencias</h2>
+      <p>Las imágenes proceden de Wikimedia Commons (CC BY-SA 4.0). El pie de foto indica autoría de la fotografía y licencia.</p>
+      <ul>
+        <li>Diseño principal con Flexbox + grid + (absolute, sticky, fixed, float).</li>
+        <li>Medidas relativas y tipografía del sistema.</li>
+      </ul>
+    </aside>
+  </section>
 </main>
+
 <footer>
+  <!-- div necesario: contenedor de columnas dentro del pie de página -->
   <div class="container cols">
+    <!-- div necesario: agrupa logo y nombre de marca -->
     <div class="footer-brand">
       <img src="img/footer.svg" alt="" aria-hidden="true">
       <div>
@@ -76,12 +90,16 @@
         <span>© 2025 · Todos los derechos reservados</span>
       </div>
     </div>
+    <!-- div necesario: bloque adicional de texto dentro del footer -->
     <div>
       <p>Créditos fotográficos y licencia (CC BY-SA 4.0) indicados en los pie de foto.</p>
     </div>
   </div>
+
   <a class="back-to-top" href="#top" title="Volver arriba">↑</a>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>
+
